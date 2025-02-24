@@ -1,0 +1,6 @@
+docker exec => dit is het uitvoeren van het geven commando bijvoorbeeld => docker exec -it db mongosh
+dit zorgt ervoor dat je in de database van mongo kan dus het uitvoeren/ opstarten van een programma
+
+docker logs is het loggen van fouten of gegeven data die uitgestuurd wordt dit is gemakkelijk zodat je kan 
+zien waar het mis loopt bijvoorbeeld als mijn data niet goed in laad dan zal ik dat kunnen zien in miin docker 
+logs 
