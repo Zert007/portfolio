@@ -106,31 +106,26 @@ body {
 }
 
 /* About Section */
-section {
+section.about {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center the content */
     padding: 6rem;
 }
 
-section.about h1 {
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-    font-weight: 600;
+section.about .left {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
 }
 
-section.about h1 span {
-    color: white;
+section.about .right {
+    flex: 1;
+    padding-left: 2rem; /* Adds space between the image and text */
 }
-
-section.about h3 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-section.about p {
-    font-family: 'Lato', sans-serif;
-    color: rgb(0, 0, 0);
-    line-height: 1.9rem;
-    margin-bottom: 2rem;
+/* Profile Picture */
+#pfp {
+    max-width: 30%;
+    margin-left: 2rem; /* Adds space between the image and text */
 }
 
 /* Social Buttons */
@@ -203,6 +198,7 @@ section.about p {
     section.about {
         padding: 4rem;
         text-align: center;
+        flex-direction: row;
     }
 
     /* Social Buttons Centering */
@@ -241,11 +237,32 @@ section.about p {
         padding: 3rem;
     }
 
-    section.about {
-        display: block;
-        align-content: center;
-        position: static;
-        transform: none;
+    .about .container {
+        display: flex;
+        justify-content: space-between; /* Aligns the left and right sections */
+        align-items: center; /* Vertically center the content */
+    }
+    
+    .left {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end; /* Aligns the image to the right of the container */
+    }
+    
+    .right {
+        flex: 1;
+        padding-left: 20px; /* Adds space between the image and text */
+    }
+    
+    #pfp {
+        width: 150px; /* Adjust size of the image */
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+    h1, h3, p {
+        margin: 0 0 10px; /* Adds space between text elements */
     }
 
     .socials {
@@ -279,83 +296,43 @@ section.about p {
     }
 }
 
-
 /* Navigatie */
 
 /* Verberg het menu standaard op kleine schermen */
 .nav-links {
     display: flex;
     list-style: none;
-  }
+}
   
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: var(--bgDark);
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 1rem 0;
+        display: none;
+        flex-direction: column;
+        background-color: var(--bgDark);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
     }
-  
+
     .nav-links.active {
-      display: flex; /* Toon het menu als het actief is */
+        display: flex; /* Toon het menu als het actief is */
     }
-  
+
     .nav-links a {
-      display: block;
-      padding: 1rem;
+        display: block;
+        padding: 1rem;
     }
-  
+
     .hamburger {
-      display: block;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--white);
-      position: absolute;
-      right: 20px;
-      top: 20px;
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--white);
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
-  }
-/* Verberg het menu standaard op kleine schermen */
-.nav-links {
-    display: flex;
-    list-style: none;
-  }
-  
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: var(--bgDark);
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 1rem 0;
-    }
-  
-    .nav-links.active {
-      display: flex; /* Toon het menu als het actief is */
-    }
-  
-    .nav-links a {
-      display: block;
-      padding: 1rem;
-    }
-  
-    .hamburger {
-      display: block;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--white);
-      position: absolute;
-      right: 20px;
-      top: 20px;
-    }
-  }
-    
+}
