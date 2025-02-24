@@ -1,0 +1,96 @@
+use db1
+
+db.createCollection('skills')
+db.createCollection('projects')
+
+db.skills.inserMany(
+    [
+  {
+    name: 'CSS',
+    level: 7,
+    category: 'IT'
+  },
+  {
+    name: 'HTML',
+    level: 9,
+    category: [ 'IT', 'Frontend' ]
+  },
+  {
+    name: 'Javascript',
+    level: 8,
+    category: 'IT'
+  },
+  {
+    name: 'C#',
+    level: 5,
+    category: 'IT'
+  },
+  {
+    name: 'SQL',
+    level: 6,
+    category: 'IT'
+  },
+  {
+    name: 'Mongo',
+    level: 7,
+    category: 'IT'
+  },
+  {
+    name: 'Python',
+    level: 8,
+    category: 'IT'
+  },
+  {
+    name: 'Inventor',
+    level: 6.5,
+    category: '3D'
+  },
+  {
+    name: 'Blender',
+    level: 7.5,
+    category: 'IT'
+  },
+  {
+    name: 'Zmodeler',
+    level: 7,
+    category: '3D'
+  },
+  {
+    name: 'LUA',
+    level: 7,
+    category: 'IT'
+  },
+  {
+    name: 'PHP',
+    level: 5.5,
+    category: 'IT'
+  },
+  {
+    name: 'Hardware',
+    level: 6,
+    category: 'IT'
+  },
+  {
+    name: 'Network building',
+    level: 7,
+    category: 'IT'
+  }
+])
+
+db.projects.inserMany(
+    [
+  {
+    Title: 'Portfolio',
+    beschrijving: 'in dit project hebben we een portfolio gemaakt die met de database comminuceerd en waar de data van skills en projecten uit een mongo database gehaald worden',
+    Tags: [ 'css', 'HTML', 'Javascript', 'Mongodb', 'Node.Js' ]
+  },
+  {
+    Title: 'Mini C# projecten',
+    beschrijving: 'Tijdens deze projecten hebben we verschollende dingen gedaan waaronder een script geschreven voor te kijken of het een pallindroom is en nog veel meer',
+    Tags: [ 'C#', '.NET' ]
+  }
+]
+)
+
+db.projects.find()
+db.skills.find()
