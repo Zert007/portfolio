@@ -24,25 +24,6 @@ header {
     padding: 1rem 0;
 }
 
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-}
-
-header nav .left a {
-    color: var(--white);
-    text-decoration: none;
-    margin-right: 2rem;
-    text-transform: uppercase;
-    transition: all .2s ease;
-}
-
-header nav .left a:hover {
-    color: var(--primary);
-}
-
 .hero {
     display: flex;
     flex-wrap: wrap;
@@ -154,19 +135,6 @@ header nav .left a:hover {
     }
 }
 
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    header nav .left a {
-        display: block;
-        margin-bottom: 1rem;
-    }
-    .hero .right h1 {
-        font-size: 3rem;
-    }
-}
 
 @media (max-width: 480px) {
     .hero .right h1 {
@@ -181,52 +149,76 @@ header nav .left a:hover {
     }
 }
 
+/* Navigatie */
 
-/* Default: Hide nav-links for small screens */
-.nav-links {
+#navburger {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px; /* Adjust depending on your header height */
-    left: 0;
-    width: 100%;
-    background-color: var(--bgDark); 
-    padding: 10px 0;
-    text-align: center;
 }
 
-/* Show menu when active */
-.nav-links.active {
+/* Navigatiebalk standaard styling */
+header nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: rgb(255, 255, 255); /* Zorgt voor een duidelijke achtergrond */
 }
 
-/* Hamburger Styling */
-.hamburger {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: var(--white);
+/* Navigatielinks styling */
+.nav-links {
+    display: flex; /* Zorgt ervoor dat links naast elkaar staan */
+    gap: 2rem; /* Voegt ruimte toe tussen de links */
+    list-style: none;
 }
 
-/* Show hamburger on smaller screens */
-@media screen and (max-width: 768px) {
-    .hamburger {
+/* Stijl de navigatielinks */
+.nav-links a {
+    color: rgb(0, 0, 0); /* Zorgt ervoor dat de links zichtbaar zijn */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover-effect */
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Mobile Menu - Alleen tonen op kleine schermen */
+@media (max-width: 768px) {
+    #navburger {
         display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
+        background-color: var(--bgDark);
         position: absolute;
-        top: 70px; /* Adjust if needed */
+        top: 60px;
         left: 0;
         width: 100%;
-        background-color: var(--bgDark);
-        padding: 10px 0;
         text-align: center;
+        padding: 1rem 0;
+        z-index: 500;
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Toon het menu als het actief is */
+        position: relative;
+        padding-bottom: 50px;
+        z-index: 100000;
+    }
+    #contactp{
+        display: none;
     }
 }
+
+

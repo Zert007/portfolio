@@ -291,15 +291,55 @@ section.about .right {
 
 }
 
-/* Navigatie */
 
-/* Verberg het menu standaard op kleine schermen */
-.nav-links {
+/* Navigatie menu */
+
+#navburger {
+    display: none;
+}
+
+/* Navigatiebalk standaard styling */
+header nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: rgb(255, 255, 255); /* Zorgt voor een duidelijke achtergrond */
+}
+
+/* Navigatielinks styling */
+.nav-links {
+    display: flex; /* Zorgt ervoor dat links naast elkaar staan */
+    gap: 2rem; /* Voegt ruimte toe tussen de links */
     list-style: none;
 }
-  
+
+/* Stijl de navigatielinks */
+.nav-links a {
+    color: rgb(0, 0, 0); /* Zorgt ervoor dat de links zichtbaar zijn */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover-effect */
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Mobile Menu - Alleen tonen op kleine schermen */
 @media (max-width: 768px) {
+    #navburger {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
     .nav-links {
         display: none;
         flex-direction: column;
@@ -310,25 +350,18 @@ section.about .right {
         width: 100%;
         text-align: center;
         padding: 1rem 0;
+        z-index: 500;
     }
 
     .nav-links.active {
         display: flex; /* Toon het menu als het actief is */
-        min-height: auto;
+        position: relative;
+        padding-bottom: 50px;
+        z-index: 100000;
     }
-
-    .nav-links a {
-        display: block;
-        padding: 1rem;
-    }
-
-    .hamburger {
-        display: block;
-        font-size: 2rem;
-        cursor: pointer;
-        color: var(--white);
-        position: absolute;
-        right: 20px;
-        top: 20px;
+    #contactp{
+        display: none;
     }
 }
+
+
