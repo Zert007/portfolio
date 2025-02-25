@@ -111,6 +111,11 @@ section.about {
     align-items: center; /* Vertically center the content */
     padding: 6rem;
 }
+.about .container {
+    display: flex;
+    justify-content: space-between; /* Aligns the left and right sections */
+    align-items: center; /* Vertically center the content */
+}
 
 section.about .left {
     flex: 1;
@@ -124,23 +129,30 @@ section.about .right {
 }
 /* Profile Picture */
 #pfp {
-    max-width: 30%;
+    max-width: 60%;
     margin-left: 2rem; /* Adds space between the image and text */
+    padding-top: 20px;
 }
 
 /* Social Buttons */
 .socials {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items:end;
+    min-height: 50vh;
+    padding-bottom: 80px;
+
+
 }
 
 .socials h1 {
     color: white;
 }
-
+.services{
+    width: 100%;
+    background-color: black;
+}
 /* Social Buttons Styling */
 .socials button {
     background: linear-gradient(135deg, #3a3a3a, #d8d8d8);
@@ -158,6 +170,7 @@ section.about .right {
     transition: all 0.3s ease;
     cursor: pointer;
     margin: 10px;
+    
 }
 
 /* Social Button Icons */
@@ -236,30 +249,21 @@ section.about .right {
     section {
         padding: 3rem;
     }
+    .about.container #pfpdiv{
+        display: none;
+    }
 
+    section.about {
+        display: flex; /* Enable flexbox */
+        padding: 1rem;
+    }
     .about .container {
         display: flex;
+        flex-direction: column-reverse;
         justify-content: space-between; /* Aligns the left and right sections */
         align-items: center; /* Vertically center the content */
     }
-    
-    .left {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end; /* Aligns the image to the right of the container */
-    }
-    
-    .right {
-        flex: 1;
-        padding-left: 20px; /* Adds space between the image and text */
-    }
-    
-    #pfp {
-        width: 150px; /* Adjust size of the image */
-        height: 150px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
+     
     
     h1, h3, p {
         margin: 0 0 10px; /* Adds space between text elements */
@@ -285,15 +289,6 @@ section.about .right {
         font-size: 16px;
     }
 
-    /* Reduce hero text size */
-    .hero .right h1 {
-        font-size: 1.5rem;
-    }
-
-    /* Adjust general spacing */
-    section {
-        padding: 2rem;
-    }
 }
 
 /* Navigatie */
@@ -319,6 +314,7 @@ section.about .right {
 
     .nav-links.active {
         display: flex; /* Toon het menu als het actief is */
+        min-height: auto;
     }
 
     .nav-links a {

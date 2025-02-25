@@ -1,8 +1,12 @@
+#hier wissel je van de database
 use db1
 
+# hier maak je de collecties aan
 db.createCollection('skills')
 db.createCollection('projects')
 
+
+# hier steek je de skills in de database
 db.skills.inserMany(
     [
   {
@@ -77,6 +81,8 @@ db.skills.inserMany(
   }
 ])
 
+
+#hier steek je de projecten in de database
 db.projects.inserMany(
     [
   {
@@ -92,5 +98,7 @@ db.projects.inserMany(
 ]
 )
 
+
+#hier controleer je of de data in de database zit
 db.projects.find()
 db.skills.find()
