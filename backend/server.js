@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const Skill = require("./models/skill"); 
 const Project = require("./models/project");
+const Review = require("./models/review"); // Voeg dit toe aan het begin van je server.js
 
 const app = express();
 app.use(cors());
@@ -42,5 +43,28 @@ app.get("/projects", async (req, res) => {
     res.json(projecten);
   } catch (error) {
     res.status(500).json({ message: "Fout bij ophalen van projecten", error });
+  }
+});
+
+
+
+// API REVIEWS
+app.get("/reviews", async (req, res) => {
+  try {
+    const reviews = await Review.find();
+    res.json(reviews);
+  } catch (error) {
+    res.status(500).json({ message: "Fout bij ophalen van reviews", error });
+  }
+});
+
+app.post("/reviews", async (req, res) => {
+  try {
+    const { rating, text } = req.body;
+    const newReview = new Review({ rating, text });
+    await newReview.save();
+    res.json({ message: "Review opgeslagen!" });
+  } catch (error) {
+    res.status(500).json({ message: "Fout bij opslaan van review", error });
   }
 });

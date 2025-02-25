@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="review.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <script src="responsive.js"></script>
+    <script src="review.js"></script>
     <title>Portfolio</title>
 </head>
 <header>  
@@ -38,27 +40,27 @@
     </div>  
   </header>
 <body>
+<section>
+    <div class="review-container">
+        <h2>Laat een review achter</h2>
 
-<section class="about">
-    <div class="container flex items-centre">
-        <div class="left flex-1 justify-right" id="pfpdiv">
-            <img src="./images/giel_rossel.png" id="pfp" alt="profile pic">
+        <div class="star-rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
         </div>
-        <div class="right flex-1">
-            <h1>About Me</h1>
-            <h3>Hello! I am Giel Rossel.</h3>
-            <p>I'm a student developer at Wico Campus Neerpelt, where my passion for coding takes center stage. In the digital realm, I navigate coding challenges, collaborate on innovative projects, and explore emerging technologies.</p>
-            <p>Beyond coding, I'm an avid gamer, finding inspiration in the immersive worlds of both competitive and narrative-driven games. Balancing the virtual with the physical, I'm equally enthusiastic about sports, embracing the discipline and resilience they bring to my life.</p>
-            <p>In essence, my journey is a dynamic fusion of coding prowess, gaming adventures, and the energy of sports. Join me as I stride forward, coding lines and conquering challenges in the ever-evolving landscape of technology.</p>
-            <!--<div class="socials">
-                <a href="#"><img src="./images/linkedin.png" width="40px"></a>
-                <a href="https://www.facebook.com/giel.rossel"><img src="./images/facebook.png" width="40px"></a>
-                <a href="https://www.instagram.com/giel_rossel/"><img src="./images/instagram.png" width="40px"></a>
-                <a href="https://discord.gg/AaEnJKjp8F"><img src="./images/discord.png" width="40px"></a>
-                <a href="mailto:gielrossel@gmail.com"><img src="./images/gmail.png" width="40px"></a>
-            </div>-->
-        </div>
+
+        <textarea id="reviewText" placeholder="Schrijf je review..."></textarea>
+        <button id="submitReview">Verzenden</button>
     </div>
+
+    <div class="reviews-container">
+        <h2>Reviews</h2>
+        <div id="reviewsContainer"></div>
+    </div>
+
 </section>
 
 <section class="services">
