@@ -155,7 +155,7 @@ section.about .right {
 }
 /* Social Buttons Styling */
 .socials button {
-    background: linear-gradient(135deg, #3a3a3a, #d8d8d8);
+    background: linear-gradient(135deg, #3a3a3a, #757575);
     border-radius: 1rem;
     border: none;
     color: white;
@@ -181,7 +181,7 @@ section.about .right {
 
 /* Hover Effect */
 .socials button:hover {
-    background: linear-gradient(135deg, #d8d8d8, #3a3a3a);
+    background: linear-gradient(135deg, #757575, #3a3a3a);
     box-shadow: 0 8px 16px rgba(255, 81, 158, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
     transform: translateY(-5px);
 }
@@ -380,4 +380,8 @@ footer {
     color: gold;
     font-size: 18px;
 }
-
+iframe{
+    width: 100%;
+    min-height: 250px;
+    height: auto;
+}

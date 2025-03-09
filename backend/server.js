@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const Skill = require("./models/skill"); 
 const Project = require("./models/project");
-const Review = require("./models/review"); // Voeg dit toe aan het begin van je server.js
+const Review = require("./models/review");
 
 const app = express();
 app.use(cors());
